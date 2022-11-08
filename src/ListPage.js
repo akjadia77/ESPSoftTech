@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Contact from './Contact'; */
 /* import Axios from 'axios'; */
 /* import {useNavigate} from 'react-router-dom'; */
+import "./ListPageCss.css";
 
 const ListPage = () => {
 
@@ -74,6 +75,7 @@ const ListPage = () => {
     }
 
 
+
     return (
         <div id='home'>
 
@@ -94,33 +96,35 @@ const ListPage = () => {
                     :
                     listData.map((val, index) => {
                         return (
-                            <p>
-                                Item  {index}
-                                <p>
-                                    category_id : {val.category_id}
-                                </p>
-                                <p>
-                                    category_name : {val.category_name}
-                                </p>
-                                <p>
-                                    datetime : {val.datetime}
-                                </p>
-                                <p>
-                                    description : {val.description}
-                                </p>
-                                <p>
-                                    id : {val.id}
-                                </p>
-                                <p>
-                                    name : {val.name}
-                                </p>
-                                <p>
-                                    price : {val.price}
-                                </p>
+
+                            <div>
+
+                                <table className='brdr'>
+                                    <tr className='brdr'>
+                                        <th className='brdr'>Item</th>
+                                        <th className='brdr'>category_id</th>
+                                        <th className='brdr'>category_name</th>
+                                        <th className='brdr'>datetime</th>
+                                        <th className='brdr'>description</th>
+                                        <th className='brdr'>id</th>
+                                        <th className='brdr'>name</th>
+                                        <th className='brdr'>price</th>
+                                    </tr>
+                                    <tr className='brdr'>
+                                        <td className='brdr'>{index}</td>
+                                        <td className='brdr'>{val.category_id}</td>
+                                        <td className='brdr'>{val.category_name}</td>
+                                        <td className='brdr'>{val.datetime}</td>
+                                        <td className='brdr'>{val.description}</td>
+                                        <td className='brdr'>{val.id}</td>
+                                        <td className='brdr'>{val.name}</td>
+                                        <td className='brdr'>{val.price}</td>
+                                    </tr>
+
+                                </table>
 
 
-
-                            </p>
+                            </div>
                         );
                     })
             }
